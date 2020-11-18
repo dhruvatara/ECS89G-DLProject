@@ -18,6 +18,21 @@
 \section{Introduction}
 
 \section{Methods}
+There were several factors that we used to contribute to our prediction model represented as columns in our dataset. Those columns are described below.
+
+We considered three North American countries to build our prediction model: Canada, Mexico, and the United States. We also included the year in which each data point was from as it was an indicator later on whether the country was in fact a country (as opposed to a colony for some of the older data entries). 
+Another feature is whether the country’s currency within that particular year followed the gold standard. Gold standard indicates whether a currency under the country’s government is fixed to and may be freely exchanged or converted to gold or bank notes worth gold \cite{chengold}.
+
+A column indicating presence of domestic debt is also included. According to National Bureau of Economic Research (NBER) scholars, Reinhart and Rogoff, “domestic debt is often much larger than the monetary base in the run-up to high-inflation” \cite{nber}. We surmise that this column would be valuable in its contribution to predicting an economic crisis. Another debt-measure, sovereign debt, is used in this dataset. Sovereign or government dept, is the central government's debt. It is usually issued by the government from foreign currency for financing growth and development \cite{chensovereign}.
+
+Self-explanatory economic related columns that were also considered included an exchange rate in comparison to the United States dollar, gross domestic product (GDP), weighted default GDP, inflation in regards to annual percentages of average consumer prices, and annual unemployment rate. 
+
+Finally, the column in which we aimed to predict was the “Crisis” column. This was a simple 1 or 0 that indicated the presence of a recorded crisis for the year and country of the row it resides in.
+
+Before moving onto building models, we realized that we also had to discard data from before the year 1899. Canada and Mexico were not considered countries in the same way that the United States had gained independence and instead had regions considered colonies under various European powers at the time. Because of this, we had missing data and ultimately decided to drop rows from before the twentieth century. A column that was also an indicator of this status in data after 1899 that was retained, was the independence column. This column was another binary 0 or 1 that denoted if the country was presently independent or not.
+
+After cleaning and preparing the dataset, we created a baseline logistic regression model to predict the presence of a crisis indicator (0 or 1). When creating the model we ended up dropping the country column as it wasn’t quantitative data and also we didn’t want to take the specific country into account for our prediction. We also dropped a column describing the GDP per capita.
+
 
 \section{Results}
 
@@ -25,8 +40,8 @@
 
 \section{Conclusions}
 
-\bibliographystyle{abbrv}
-\bibliography{main}
+\bibliographystyle{unsrt}
+\bibliography{bibliography}
+\printbibliography
 
 \end{document}
-This is never printed
