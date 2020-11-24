@@ -17,13 +17,16 @@ Our experiment aims to glean insight into predicting the presence of a banking c
 
 \section{Introduction}
 
-TODO: machine learning and deep learning
+\subsection{Deep Learning}
+
+\subsection{Financial \& Economic Importance}
 
 It is important for financial institutions to attempt mitigation of a financial crisis.  This importance comes from investors ensuring that their stock investments are worthy and safe. Finding amicable features to predict early onset of global or national economic and banking crisis is no easy feat. There are however a few indications that can be considered notable data points when forming a model such as high inflation of a country's currency\cite{kumar}. 
 
-TODO: Research so far and current approaches
+\subsection{Prior Research}
 
 \section{Methods}
+\subsection{Data \& Data Cleaning}
 Our data came from Harvard Business School’s Behavioral Financial & Financial Stability’s Global Crisis Data by Country dataset \cite{harvard}. We also used unemployment rate data provided by the Federal Reserve Bank of St. Louis \cite{fred}.The gross domestic product and GDP per capita data came from the collection of the late Professor Angus Maddison of the University of Groningen’s Grogningen’s Growth & Development Centre \cite{ggdc}.
 
 There were several factors that we used to contribute to our prediction model represented as columns in our dataset. Those columns are described below.
@@ -39,6 +42,7 @@ Finally, the column in which we aimed to predict was the “Crisis” column. Th
 
 Before moving onto building models, we realized that we also had to discard data from before the year 1899. Canada and Mexico were not considered countries in the same way that the United States had gained independence and instead had regions considered colonies under various European powers at the time. Because of this, we had missing data and ultimately decided to drop rows from before the twentieth century. A column that was also an indicator of this status in data after 1899 that was retained, was the independence column. This column was another binary 0 or 1 that denoted if the country was presently independent or not.
 
+\subsection{Creating a Baseline Logistic Regression Model}
 After cleaning and preparing the dataset, we created a baseline logistic regression model to predict the presence of a crisis indicator (0 or 1). When creating the model we ended up dropping the country column as it wasn’t quantitative data and also we didn’t want to take the specific country into account for our prediction. We also dropped a column describing the GDP per capita. We decided to use logistic regression because of its simplicity as a classifier in order to develop our baseline model.
 
 
