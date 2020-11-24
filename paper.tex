@@ -33,7 +33,8 @@ Finally, the column in which we aimed to predict was the “Crisis” column. Th
 
 Before moving onto building models, we realized that we also had to discard data from before the year 1899. Canada and Mexico were not considered countries in the same way that the United States had gained independence and instead had regions considered colonies under various European powers at the time. Because of this, we had missing data and ultimately decided to drop rows from before the twentieth century. A column that was also an indicator of this status in data after 1899 that was retained, was the independence column. This column was another binary 0 or 1 that denoted if the country was presently independent or not.
 
-After cleaning and preparing the dataset, we created a baseline logistic regression model to predict the presence of a crisis indicator (0 or 1). When creating the model we ended up dropping the country column as it wasn’t quantitative data and also we didn’t want to take the specific country into account for our prediction. We also dropped a column describing the GDP per capita.
+After cleaning and preparing the dataset, we created a baseline logistic regression model to predict the presence of a crisis indicator (0 or 1). When creating the model we ended up dropping the country column as it wasn’t quantitative data and also we didn’t want to take the specific country into account for our prediction. We also dropped a column describing the GDP per capita. We decided to use logistic regression because of its simplicity as a classifier in order to develop our baseline model.
+
 
 
 \section{Results}
