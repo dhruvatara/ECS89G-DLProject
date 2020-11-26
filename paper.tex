@@ -18,12 +18,13 @@ Our experiment aims to glean insight into predicting the presence of a banking c
 \section{Introduction}
 
 \subsection{Deep Learning}
+Deep learning simply means that we are using more learning layers than traditional machine learning. By using a Recurrent Neural Network as our predictive model, we use both feed-forward and backward directions through the layers. We are able to achieve a high-level abstraction from our data by using Long short-term memory (LSTM) architecture\cite{kumar}.
 
 \subsection{Financial \& Economic Importance}
-
 It is important for financial institutions to attempt mitigation of a financial crisis.  This importance comes from investors ensuring that their stock investments are worthy and safe. Finding amicable features to predict early onset of global or national economic and banking crisis is no easy feat. There are however a few indications that can be considered notable data points when forming a model such as high inflation of a country's currency\cite{kumar}. 
 
 \subsection{Prior Research}
+There have been plenty of prior ventures into using deep learning methods to make financial and economic predictions. One notable example was done by using the same Harvard dataset we use in our experiment but focused on African nations\cite{kumar}. In this experiment, Dr. Vaibhav Kumar, uses a deep learning technique known as an Artificial Neural Network (ANN) to form predictions\cite{kumar}. 
 
 \section{Methods}
 \subsection{Data \& Data Cleaning}
@@ -51,7 +52,7 @@ After cleaning and preparing the dataset, we created a baseline logistic regress
 \subsection{Basic LSTM Model}
 Economic crises bare a cyclical nature \cite{10.1007/978-3-030-15577-3_11}. Hence, we decided to train our neural network with an LSTM layer. With numeric values in the data set ranging from -20.965125073082 to 9485136.0, we have a very big input dimension. In order to shrink the input dimension, We employed an embedding layer to reduce the input dimension to 32. However, since the embedding layer only accepts positive values, we first tested the feasibility of our model without data from the "Inflation, Annual percentages of average consumer prices column". The input then goes to an LSTM layer for training. We obtained a training accuracy of 53.31\%.
 
-Baring in mind that this accuracy is low, we hypothesized that data from the "Inflation, Annual percentages of average consumer prices" column may still hold its importance in training the neural network. Therefore, in order to preserve the scale of the data and difference between series, we attempted to normalize the data by adding the absolute value of the lowest value in the column to each value in that same column. We trained the LSTM again with the newly modified data frame. However, the training accuracy decreased further to 25.65\%. Other avenues to correctly exercise the importance of this feature needs to be explored. 
+Bearing in mind that this accuracy is low, we hypothesized that data from the "Inflation, Annual percentages of average consumer prices" column may still hold its importance in training the neural network. Therefore, in order to preserve the scale of the data and difference between series, we attempted to normalize the data by adding the absolute value of the lowest value in the column to each value in that same column. We trained the LSTM again with the newly modified data frame. However, the training accuracy decreased further to 25.65\%. Other avenues to correctly exercise the importance of this feature needs to be explored. 
 
 \section{Discussion}
 
