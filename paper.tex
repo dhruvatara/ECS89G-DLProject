@@ -17,6 +17,8 @@ Our experiment aims to glean insight into predicting the presence of a banking c
 
 \section{Introduction}
 
+We chose this particular project on predicting banking crisis because we were interesting in exploring a financial theme in our model. We were inspired by the work of Dr. Vaibhav Kumar and his application of deep learning to African economic data.
+
 \subsection{Deep Learning}
 Deep learning simply means that we are using more learning layers than traditional machine learning. By using a Recurrent Neural Network as our predictive model, we use both feed-forward and backward directions through the layers. We are able to achieve a high-level abstraction from our data by using Long short-term memory (LSTM) architecture\cite{kumar}.
 
@@ -46,13 +48,15 @@ Before moving onto building models, we realized that we also had to discard data
 \subsection{Creating a Baseline Logistic Regression Model}
 After cleaning and preparing the dataset, we created a baseline logistic regression model to predict the presence of a crisis indicator (0 or 1). When creating the model we ended up dropping the country column as it wasn’t quantitative data and also we didn’t want to take the specific country into account for our prediction. We also dropped a column describing the GDP per capita. We decided to use logistic regression because of its simplicity as a classifier in order to develop our baseline model.
 
+\subsection{Basic LSTM Model}
+For our deep learning Recurrant Neural Network (RNN) model, we used Tensorflow and Keras. We added a LSTM layer with 32 internal units using a tahn activation and a ReLu recurrent activation. We also added a dense layer with a sigmoid activation. Upon compilation, we used an Adam optimizer. 
+
 
 
 \section{Results}
-\subsection{Basic LSTM Model}
-Economic crises bare a cyclical nature \cite{10.1007/978-3-030-15577-3_11}. Hence, we decided to train our neural network with an LSTM layer. With numeric values in the data set ranging from -20.965125073082 to 9485136.0, we have a very big input dimension. In order to shrink the input dimension, We employed an embedding layer to reduce the input dimension to 32. However, since the embedding layer only accepts positive values, we first tested the feasibility of our model without data from the "Inflation, Annual percentages of average consumer prices column". The input then goes to an LSTM layer for training. We obtained a training accuracy of 53.31\%.
+Economic crises bare a cyclical nature \cite{10.1007/978-3-030-15577-3_11}. Hence, we decided to train our neural network with an LSTM layer. With numeric values in the data set ranging from -20.965125073082 to 9485136.0, we have a large input dimension. In order to shrink the input dimension, we employed an embedding layer to reduce it to 32. Since the embedding layer only accepts positive values, we first tested the feasibility of our model without data from the "Inflation, Annual percentages of average consumer prices column". The input then goes to an LSTM layer for training. We obtained a training accuracy of 53.31\%.
 
-Bearing in mind that this accuracy is low, we hypothesized that data from the "Inflation, Annual percentages of average consumer prices" column may still hold its importance in training the neural network. Therefore, in order to preserve the scale of the data and difference between series, we attempted to normalize the data by adding the absolute value of the lowest value in the column to each value in that same column. We trained the LSTM again with the newly modified data frame. However, the training accuracy decreased further to 25.65\%. Other avenues to correctly exercise the importance of this feature needs to be explored. 
+Bearing in mind that this accuracy is low, we hypothesized that data from the "Inflation, Annual percentages of average consumer prices" column may still hold its importance in training the neural network. In order to preserve the scale of the data and difference between series, we attempted to normalize the data by adding the absolute value of the lowest value in the column to each value in that same column. We trained the LSTM again with the newly modified data frame. However, the training accuracy decreased further to 25.65\%. Other avenues to correctly exercise the importance of this feature need to be explored. 
 
 \section{Discussion}
 
